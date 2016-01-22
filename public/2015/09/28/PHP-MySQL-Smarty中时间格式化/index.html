@@ -1,0 +1,709 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="没有实力，哪来童话" />
+
+
+
+  <meta name="keywords" content="MySQL,PHP,Smarty,实习,时间格式化," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。
+PHP:&amp;lt;?php 
+    echo $showtime=date(&quot;Y-m-d H:i:s&quot;);
+?&amp;gt;
+a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP|MySQL|Smarty中时间格式化">
+<meta property="og:url" content="http://yoursite.com/2015/09/28/PHP-MySQL-Smarty中时间格式化/index.html">
+<meta property="og:site_name" content="Fancy's Mementos">
+<meta property="og:description" content="这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。
+PHP:&amp;lt;?php 
+    echo $showtime=date(&quot;Y-m-d H:i:s&quot;);
+?&amp;gt;
+a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
+<meta property="og:updated_time" content="2015-09-29T08:08:21.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP|MySQL|Smarty中时间格式化">
+<meta name="twitter:description" content="这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。
+PHP:&amp;lt;?php 
+    echo $showtime=date(&quot;Y-m-d H:i:s&quot;);
+?&amp;gt;
+a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'always'
+  };
+</script>
+
+  <title> PHP|MySQL|Smarty中时间格式化 | Fancy's Mementos </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Fancy's Mementos</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              PHP|MySQL|Smarty中时间格式化
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-28T22:54:47+08:00" content="2015-09-28">
+            2015-09-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Smarty/" itemprop="url" rel="index">
+                  <span itemprop="name">Smarty</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Smarty/PHP/" itemprop="url" rel="index">
+                  <span itemprop="name">PHP</span>
+                </a>
+              </span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/Smarty/PHP/MySQL/" itemprop="url" rel="index">
+                  <span itemprop="name">MySQL</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/28/PHP-MySQL-Smarty中时间格式化/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/28/PHP-MySQL-Smarty中时间格式化/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。</p>
+<h3 id="PHP:">PHP:</h3><pre><code><span class="php"><span class="preprocessor">&lt;?php</span> 
+    <span class="keyword">echo</span> <span class="variable">$showtime</span>=date(<span class="string">"Y-m-d H:i:s"</span>);
+<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>a - “am” 或是 “pm”<br>A - “AM” 或是 “PM”<br>d - 几日，二位数字，若不足二位则前面补零; 如: “01” 至 “31”<br>D - 星期几，三个英文字母; 如: “Fri”<br>F - 月份，英文全名; 如: “January”<br>h - 12 小时制的小时; 如: “01” 至 “12”<br>H - 24 小时制的小时; 如: “00” 至 “23”<br>g - 12 小时制的小时，不足二位不补零; 如: “1” 至 12”<br>G - 24 小时制的小时，不足二位不补零; 如: “0” 至 “23”<br>i - 分钟; 如: “00” 至 “59”<br>j - 几日，二位数字，若不足二位不补零; 如: “1” 至 “31”<br>l - 星期几，英文全名; 如: “Friday”<br>m - 月份，二位数字，若不足二位则在前面补零; 如: “01” 至 “12”<br>n - 月份，二位数字，若不足二位则不补零; 如: “1” 至 “12”<br>M - 月份，三个英文字母; 如: “Jan”<br>s - 秒; 如: “00” 至 “59”<br>S - 字尾加英文序数，二个英文字母; 如: “th”，”nd”<br>t - 指定月份的天数; 如: “28” 至 “31”<br>U - 总秒数<br>w - 数字型的星期几，如: “0” (星期日) 至 “6” (星期六)<br>Y - 年，四位数字; 如: “1999”<br>y - 年，二位数字; 如: “99”<br>z - 一年中的第几天; 如: “0” 至 “365”<br>可以自由设定显示的内容,连接符号或是显示位置,例如 date(“m-d H”) 或者date(“dmY”);?&gt;等</p>
+<h3 id="Smarty:">Smarty:</h3><p>index.php:</p>
+<pre><code><span class="variable">$smarty</span> = new Smarty;
+<span class="variable">$smarty-</span>&gt;assign(<span class="string">'yesterday'</span>, strtotime(<span class="string">'-1 day'</span>));
+<span class="variable">$smarty-</span>&gt;display(<span class="string">'index.tpl'</span>);
+</code></pre><p>index.tpl:</p>
+<pre><code>{<span class="variable">$smarty</span>.now|date_format}
+{<span class="variable">$smarty</span>.now|date_format:<span class="string">"%A, %B %e, %Y"</span>}
+{<span class="variable">$smarty</span>.now|date_format:<span class="string">"%H:%M:%S"</span>}
+{<span class="variable">$yesterday</span>|date_format}
+{<span class="variable">$yesterday</span>|date_format:<span class="string">"%A, %B %e, %Y"</span>}
+{<span class="variable">$yesterday</span>|date_format:<span class="string">"%H:%M:%S"</span>}
+</code></pre><h3 id="MySQL：">MySQL：</h3><p>获取系统日期： NOW()<br>格式化日期： DATE_FORMAT(date, format)<br>注： date：时间字段<br>format：日期格式<br>返回系统日期,输出 2015-09-29 14:38:59</p>
+<pre><code><span class="operator"><span class="keyword">select</span> <span class="keyword">now</span>();</span>
+</code></pre><p>输出 15-09-29</p>
+<pre><code><span class="operator"><span class="keyword">select</span> <span class="keyword">date_format</span>(<span class="keyword">now</span>(),<span class="string">'%y-%m-%d'</span>);</span>
+</code></pre><p>format字符串格式化date值:</p>
+<p>%S, %s 两位数字形式的秒（ 00,01, …, 59）<br>%I, %i 两位数字形式的分（ 00,01, …, 59）<br>%H 两位数字形式的小时，24 小时（00,01, …, 23）<br>%h 两位数字形式的小时，12 小时（01,02, …, 12）<br>%k 数字形式的小时，24 小时（0,1, …, 23）<br>%l 数字形式的小时，12 小时（1, 2, …, 12）<br>%T 24 小时的时间形式（hh:mm:ss）<br>%r 12 小时的时间形式（hh:mm:ss AM 或hh:mm:ss PM）<br>%p AM或PM<br>%W 一周中每一天的名称（Sunday, Monday, …, Saturday）<br>%a 一周中每一天名称的缩写（Sun, Mon, …, Sat）<br>%d 两位数字表示月中的天数（00, 01,…, 31）<br>%e 数字形式表示月中的天数（1, 2， …, 31）<br>%D 英文后缀表示月中的天数（1st, 2nd, 3rd,…）<br>%w 以数字形式表示周中的天数（ 0 = Sunday, 1=Monday, …, 6=Saturday）<br>%j 以三位数字表示年中的天数（ 001, 002, …, 366）<br>%U 周（0, 1, 52），其中Sunday 为周中的第一天<br>%u 周（0, 1, 52），其中Monday 为周中的第一天<br>%M 月名（January, February, …, December）<br>%b 缩写的月名（ January, February,…., December）<br>%m 两位数字表示的月份（01, 02, …, 12）<br>%c 数字表示的月份（1, 2, …., 12）<br>%Y 四位数字表示的年份<br>%y 两位数字表示的年份<br>%% 直接值“%”</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Smarty/" rel="tag">#Smarty</a>
+          
+            <a href="/tags/实习/" rel="tag">#实习</a>
+          
+            <a href="/tags/时间格式化/" rel="tag">#时间格式化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/29/Smarty比较操作符/" rel="prev">Smarty比较操作符</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/27/关于-你/" rel="next">关于 你</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/28/PHP-MySQL-Smarty中时间格式化/"
+                   data-title="PHP|MySQL|Smarty中时间格式化" data-url="http://yoursite.com/2015/09/28/PHP-MySQL-Smarty中时间格式化/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="Fancy" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Fancy</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">没有实力，哪来童话</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jermingfan" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jermingfan" target="_blank">weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP:"><span class="nav-number">1.</span> <span class="nav-text">PHP:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Smarty:"><span class="nav-number">2.</span> <span class="nav-text">Smarty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL："><span class="nav-number">3.</span> <span class="nav-text">MySQL：</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fancy</span>
+</div>
+
+<div class="powered-by">
+  <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  F -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fancyblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
