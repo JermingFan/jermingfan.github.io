@@ -1,16 +1,11 @@
 <!doctype html>
-
-
-
+<html class="theme-next use-motion theme-next-mist">
+<head>
   
 
-
-<html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
+<meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -23,22 +18,22 @@
 
 
 
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
-
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
-
-
-
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
 
 
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+    <meta name="description" content="没有盔甲、一身软肋" />
+
 
 
   <meta name="keywords" content="MySQL,PHP,Smarty,实习,时间格式化," />
@@ -47,14 +42,7 @@
 
 
 
-
-
-
   <link rel="shortcut icon" type="image/x-icon" href="/avatar.png?v=0.4.5.2" />
-
-
-
-
 
 
 <meta name="description" content="这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。
@@ -81,26 +69,29 @@ PHP:&amp;lt;?php
 a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
 
-
 <script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: "always",
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
+    sidebar: 'always'
   };
 </script>
+
+
 
   <title> PHP|MySQL|Smarty中时间格式化 | Fancy's Mementos </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
   
 
 
@@ -108,12 +99,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
 
 
-
-
-  
-  
-
-  <div class="container one-collumn  page-post-detail ">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -148,7 +134,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-home"></i> <br />
             
             首页
           </a>
@@ -158,7 +144,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-th"></i> <br />
             
             分类
           </a>
@@ -168,7 +154,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-user"></i> <br />
             
             关于
           </a>
@@ -178,7 +164,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-archive"></i> <br />
             
             归档
           </a>
@@ -188,14 +174,13 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
 
-      
       
       
     </ul>
@@ -209,17 +194,11 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+        <div id="content" class="content"> 
 
   <div id="posts" class="posts-expand">
     
 
-  
-  
-
-  
   
   
 
@@ -242,10 +221,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-09-28T22:54:47+08:00" content="2015-09-28">
               2015-09-28
             </time>
@@ -253,11 +229,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Smarty/" itemprop="url" rel="index">
@@ -309,20 +281,18 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
-        <p>这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。</p>
+        <span itemprop="articleBody"><p>这个问题来源于实习时需要在tpl上把时间增加时分秒，代码是使用Smarty模板，但是当时自己往代码中加的是PHP的时分秒“H:i:s”，所以一直不正确。自己后来还查了MySQL中跟时间有关的函数，现在都记录下来。</p>
 <h3 id="PHP:">PHP:</h3><pre><code><span class="php"><span class="preprocessor">&lt;?php</span> 
     <span class="keyword">echo</span> <span class="variable">$showtime</span>=date(<span class="string">"Y-m-d H:i:s"</span>);
 <span class="preprocessor">?&gt;</span></span>
@@ -344,7 +314,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 <pre><code><span class="operator"><span class="keyword">select</span> <span class="keyword">date_format</span>(<span class="keyword">now</span>(),<span class="string">'%y-%m-%d'</span>);</span>
 </code></pre><p>format字符串格式化date值:</p>
 <p>%S, %s 两位数字形式的秒（ 00,01, …, 59）<br>%I, %i 两位数字形式的分（ 00,01, …, 59）<br>%H 两位数字形式的小时，24 小时（00,01, …, 23）<br>%h 两位数字形式的小时，12 小时（01,02, …, 12）<br>%k 数字形式的小时，24 小时（0,1, …, 23）<br>%l 数字形式的小时，12 小时（1, 2, …, 12）<br>%T 24 小时的时间形式（hh:mm:ss）<br>%r 12 小时的时间形式（hh:mm:ss AM 或hh:mm:ss PM）<br>%p AM或PM<br>%W 一周中每一天的名称（Sunday, Monday, …, Saturday）<br>%a 一周中每一天名称的缩写（Sun, Mon, …, Sat）<br>%d 两位数字表示月中的天数（00, 01,…, 31）<br>%e 数字形式表示月中的天数（1, 2， …, 31）<br>%D 英文后缀表示月中的天数（1st, 2nd, 3rd,…）<br>%w 以数字形式表示周中的天数（ 0 = Sunday, 1=Monday, …, 6=Saturday）<br>%j 以三位数字表示年中的天数（ 001, 002, …, 366）<br>%U 周（0, 1, 52），其中Sunday 为周中的第一天<br>%u 周（0, 1, 52），其中Monday 为周中的第一天<br>%M 月名（January, February, …, December）<br>%b 缩写的月名（ January, February,…., December）<br>%m 两位数字表示的月份（01, 02, …, 12）<br>%c 数字表示的月份（1, 2, …., 12）<br>%Y 四位数字表示的年份<br>%y 两位数字表示的年份<br>%% 直接值“%”</p>
-
+</span>
       
     </div>
 
@@ -397,24 +367,23 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
     </div>
   </div>
 
+ </div>
 
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2015/09/28/PHP-MySQL-Smarty中时间格式化/"
-           data-title="PHP|MySQL|Smarty中时间格式化" data-url="http://yoursite.com/2015/09/28/PHP-MySQL-Smarty中时间格式化/">
-      </div>
-    
-  </div>
-
-
-        </div>
         
-          
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/28/PHP-MySQL-Smarty中时间格式化/"
+                   data-title="PHP|MySQL|Smarty中时间格式化" data-url="http://yoursite.com/2015/09/28/PHP-MySQL-Smarty中时间格式化/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -442,12 +411,10 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/avatar.png"
-               alt="Fancy" />
+          <img class="site-author-image" src="/avatar.png" alt="Fancy" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Fancy</p>
-          <p class="site-description motion-element" itemprop="description">没有盔甲、一身软肋</p>
         </div>
+        <p class="site-description motion-element" itemprop="description">没有盔甲、一身软肋</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -479,17 +446,13 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
             
               <span class="links-of-author-item">
                 <a href="https://github.com/jermingfan" target="_blank">
-                  
-                    <i class="fa fa-globe"></i> github
-                  
+                  <i class="fa fa-github"></i> github
                 </a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://weibo.com/jermingfan" target="_blank">
-                  
-                    <i class="fa fa-globe"></i> weibo
-                  
+                  <i class="fa fa-weibo"></i> weibo
                 </a>
               </span>
             
@@ -507,20 +470,14 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
-            
-              
             
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP:"><span class="nav-number">1.</span> <span class="nav-text">PHP:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Smarty:"><span class="nav-number">2.</span> <span class="nav-text">Smarty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL："><span class="nav-number">3.</span> <span class="nav-text">MySQL：</span></a></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
         </section>
       
 
@@ -528,13 +485,11 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
   </aside>
 
 
-        
-      </div>
+      
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+      <div class="footer-inner"> <div class="copyright" >
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
@@ -556,48 +511,64 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 </div>
 
 
-
-      </div>
+ </div>
     </footer>
 
     <div class="back-to-top"></div>
   </div>
 
-  
-
-
-  
-
-
-
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+  
+  
+    
 
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fancyblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=0.4.5.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.4.5.2"></script>
-
-
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
   
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
 
-  
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.4.5.2"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -677,7 +648,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
     function tocOverflowIndicator (indicator, action) {
       var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
+      var opacity = action === 'show' ? 0.4 : 0;
       $indicator.velocity ?
         $indicator.velocity('stop').velocity({
           opacity: opacity
@@ -731,7 +702,7 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var targetSelector = escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -744,60 +715,45 @@ a - “am” 或是 “pm”A - “AM” 或是 “PM”d">
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
       }
-    };
+    }
   });
 </script>
 
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.4.5.2"></script>
-
-
-
-  
-
-  
-    
-  
-
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"fancyblog"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
   </script>
 
   
-    
-  
-
-
-
-
-
-  
   
 
   
   
 
-
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>
